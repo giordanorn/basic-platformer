@@ -83,11 +83,18 @@ points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
 
 [node name="Fase1" type="Node2D"]
 
-[node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 138.938, 59.248 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 57.9033, 412.875 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 327.28, -90.6306 )
+offset = Vector2( -40, 0 )
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 69, 69 )
 format = 1
-tile_data = PoolIntArray( 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0 )
+tile_data = PoolIntArray( 458752, 3, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 1, 0 )

@@ -27,18 +27,22 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 34.7531
-height = 25.1347
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Player" type="KinematicBody2D"]
+editor/display_folded = true
 script = ExtResource( 1 )
+speedX = 200
+jumpForce = 450
+gravity = 400
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walking"
-frame = 3
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+scale = Vector2( 2, 4.5 )
 shape = SubResource( 2 )

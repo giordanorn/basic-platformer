@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Aula2"
+config/name="Trabalho de MBJ"
 run/main_scene="res://Scenes/Fase1.tscn"
 config/icon="res://icon.png"
 
