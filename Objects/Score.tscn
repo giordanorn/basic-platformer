@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=1]
+
+[node name="Score" type="Label"]
+margin_left = 5.14563
+margin_top = 2.94037
+margin_right = 50.1456
+margin_bottom = 33.9404
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 1
+text = "score:"
+uppercase = true
+script = ExtResource( 1 )

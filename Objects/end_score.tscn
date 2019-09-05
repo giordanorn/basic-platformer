@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/end_score.gd" type="Script" id=1]
+
+[node name="end_score" type="RichTextLabel"]
+margin_left = 215.0
+margin_top = 259.0
+margin_right = 889.0
+margin_bottom = 286.0
+script = ExtResource( 1 )

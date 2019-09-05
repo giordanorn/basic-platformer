@@ -54,7 +54,7 @@ margin_left = 215.404
 margin_top = 123.0
 margin_right = 889.404
 margin_bottom = 286.0
-text = "Victory!"
+text = "Defeat!"
 
 [node name="end_score" parent="HUD" instance=ExtResource( 4 )]
 [connection signal="button_up" from="HUD/control/restart" to="HUD/control/restart" method="_on_start_button_up"]

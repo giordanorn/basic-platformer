@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Sprites/Levels/larva.jpeg" type="Texture" id=1]
 [ext_resource path="res://Sprites/Levels/tiles_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Objects/Warp Zone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Dead Zone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Score.gd" type="Script" id=7]
+[ext_resource path="res://Objects/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Lives.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Score.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0.75, 0, 70, 0, 70, 70, 0.75, 70 )
@@ -187,91 +189,97 @@ position = Vector2( -469.892, 1869.76 )
 scale = Vector2( 10, 600 )
 resetTo = "3"
 
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="Lives" parent="HUD" instance=ExtResource( 6 )]
+
+[node name="Score" parent="HUD" instance=ExtResource( 7 )]
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -216.335, 484.62 )
 
 [node name="Coin2" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -228.522, 796.839 )
 
 [node name="Coin3" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -231.888, 1134.83 )
 
 [node name="Coin4" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -223.531, 1488.79 )
 
 [node name="Coin5" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 8.24808, 1956.09 )
 
 [node name="Coin6" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 211.998, 2537.4 )
 
 [node name="Coin7" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 223.412, 2975.84 )
 
 [node name="Coin8" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 124.7, 3599.75 )
 
 [node name="Coin9" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -17.5015, 4043.54 )
 
 [node name="Coin10" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -114.777, 4358.5 )
 
 [node name="Coin11" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -161.881, 4989.02 )
 
 [node name="Coin12" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( -86.7822, 5687.5 )
 
 [node name="Coin13" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 30.5094, 6473.35 )
 
 [node name="Coin14" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 182.988, 6942.52 )
 
 [node name="Coin15" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 253.363, 7376.5 )
 
 [node name="Coin16" parent="Coins" groups=[
 "Coins",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 276.822, 7704.91 )
 
 [node name="Player" parent="." groups=[
 "Players",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 9 )]
 position = Vector2( 29.6651, -46.7796 )
 speedX = 300
 jumpForce = 700
@@ -284,23 +292,6 @@ current = true
 process_mode = 0
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Score" type="Label" parent="HUD"]
-margin_left = 5.14563
-margin_top = 2.94037
-margin_right = 50.1456
-margin_bottom = 33.9404
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 1
-custom_constants/line_spacing = 0
-custom_constants/shadow_offset_y = 1
-text = "score:"
-uppercase = true
-script = ExtResource( 7 )
 [connection signal="body_entered" from="Coins/Coin" to="Player" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coins/Coin2" to="Player" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coins/Coin3" to="Player" method="_on_Coin_body_entered"]

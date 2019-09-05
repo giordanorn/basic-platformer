@@ -13,8 +13,5 @@ func _ready():
 #	pass
 
 
-func _on_start_button_up():
-	GameController.score = 0
-	GameController.score_on_level = 0
-	GameController.lives = 3
-	var change_scene = get_tree().change_scene("res://Levels/Level1.tscn")
+func _on_exit_button_up():
+	get_tree().quit()
