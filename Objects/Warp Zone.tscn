@@ -5,7 +5,6 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Area2D" type="Area2D"]
-editor/display_folded = true
 scale = Vector2( 1e-05, 1e-05 )
 script = ExtResource( 1 )
 
