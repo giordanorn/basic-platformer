@@ -7,7 +7,7 @@ export var speedX = 100
 export var jumpForce = 200
 export var gravity = 300
 
-export var score = 0
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,3 +37,7 @@ func _process(delta):
 	move.y += gravity * delta
 	
 	move_and_slide(move, UP)
+
+func _on_Coin_body_entered(body):
+	score += 1
+	print ("Player: Take a coin. Total = " + str(score))

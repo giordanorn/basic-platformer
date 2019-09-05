@@ -28,6 +28,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.7554, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -38,7 +39,7 @@ gravity = 400
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walking"
-frame = 10
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
