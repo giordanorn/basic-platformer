@@ -7,16 +7,12 @@ export var speedX = 100
 export var jumpForce = 200
 export var gravity = 300
 
-var score = 0
+signal coin_taken
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	
 	if Input.is_action_pressed("ui_left"):
 		move.x = -speedX
 		$AnimatedSprite.animation = "walking"
@@ -33,11 +29,10 @@ func _process(delta):
 		move.y = 0
 		if Input.is_action_pressed("ui_accept"):
 			move.y = -jumpForce
-	
+			
 	move.y += gravity * delta
-	
 	move_and_slide(move, UP)
 
 func _on_Coin_body_entered(body):
-	score += 1
-	print ("Player: Take a coin. Total = " + str(score))
+	emit_signal("coin_taken")
+	print ("Player: Took a coin.")
