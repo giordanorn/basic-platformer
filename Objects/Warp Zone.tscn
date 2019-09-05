@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Levels/Warp Zone.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Area2D" type="Area2D"]
+editor/display_folded = true
 scale = Vector2( 1e-05, 1e-05 )
 script = ExtResource( 1 )
 
