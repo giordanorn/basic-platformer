@@ -7,7 +7,7 @@ export var speedX = 100
 export var jumpForce = 200
 export var gravity = 300
 
-signal coin_taken
+signal take_coin
 
 func _ready():
 	pass
@@ -34,5 +34,6 @@ func _process(delta):
 	move_and_slide(move, UP)
 
 func _on_Coin_body_entered(body):
-	emit_signal("coin_taken")
-	print ("Player: Took a coin.")
+	GameController.score += 1
+	emit_signal("take_coin")
+	print ("Player: Took a coin. Total is " + str(GameController.score))

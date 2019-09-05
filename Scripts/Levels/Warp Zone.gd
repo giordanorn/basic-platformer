@@ -1,8 +1,6 @@
 extends Area2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var to = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,5 +13,5 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Players"):
-		print ("Warp: Player has entered. changing scene to level 2.")
-		var change_scene = get_tree().change_scene("res://Levels/Level2.tscn")
+		print ("Warp: Player has entered. changing scene to level 3.")
+		var change_scene = get_tree().change_scene("res://Levels/Level" + str(to) + ".tscn")
