@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Levels/tiles_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Area2D.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
@@ -82,9 +81,7 @@ points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
 } ]
 3/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
-
-[node name="Fase1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, -50 )
@@ -100,14 +97,4 @@ drag_margin_v_enabled = false
 tile_set = SubResource( 4 )
 cell_size = Vector2( 69, 69 )
 format = 1
-tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0, 458752, 3, 0, 458753, 2, 0 )
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-position = Vector2( 743.091, -99.0852 )
-scale = Vector2( 5, 10 )
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+tile_data = PoolIntArray( 0, 3, 0, 1, 1, 0 )

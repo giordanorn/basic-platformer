@@ -14,4 +14,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://Levels/Level2.tscn")
+	print ("changing scene to level 2")
+	if (body.name == "Player"):
+		get_tree().change_scene("res://Levels/Level2.tscn")
