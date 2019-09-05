@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/Levels/tiles_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Warp Zone.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Dead Zone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Collectable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0.75, 0, 70, 0, 70, 70, 0.75, 70 )
@@ -123,8 +125,20 @@ tile_data = PoolIntArray( -131062, 0, 196617, -65534, 0, 196612, -65526, 0, 2621
 position = Vector2( 725, -55 )
 scale = Vector2( 3.5, 5.5 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8.5864, -117.364 )
+[node name="Dead Zone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 441.232, 340.05 )
+scale = Vector2( 1000, 10 )
+
+[node name="Collectable" parent="." instance=ExtResource( 4 )]
+position = Vector2( 335.389, -43.8293 )
+scale = Vector2( 1, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 29.6651, -46.7796 )
+speedX = 300
+jumpForce = 500
+gravity = 800
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 show_behind_parent = true

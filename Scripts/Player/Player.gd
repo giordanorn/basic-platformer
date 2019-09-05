@@ -7,6 +7,7 @@ export var speedX = 100
 export var jumpForce = 200
 export var gravity = 300
 
+export var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move.y += gravity * delta
+	
 	
 	if Input.is_action_pressed("ui_left"):
 		move.x = -speedX
@@ -29,8 +30,10 @@ func _process(delta):
 		$AnimatedSprite.animation = "idle"
 		
 	if is_on_floor():
+		move.y = 0
 		if Input.is_action_pressed("ui_accept"):
-			move.y = 0
 			move.y = -jumpForce
-			
+	
+	move.y += gravity * delta
+	
 	move_and_slide(move, UP)
