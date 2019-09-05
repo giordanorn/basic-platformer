@@ -1,7 +1,9 @@
 extends Area2D
 
+export var resetTo = ""
+
 func _on_Area2D_body_entered(body):
-	# improvement needed
 	if (body.name == "Player"):
-		print ("Player fell out of bounds")
-		var change_scene = get_tree().change_scene("res://Levels/Level1.tscn")
+		print ("Death Zone: Player entered.")
+		GameController.score = GameController.score_on_level
+		var change_scene = get_tree().change_scene("res://Levels/Level" + resetTo + ".tscn")

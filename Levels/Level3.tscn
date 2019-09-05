@@ -180,10 +180,12 @@ to = "End"
 [node name="Death Zone" parent="." instance=ExtResource( 4 )]
 position = Vector2( 582.014, 1867.31 )
 scale = Vector2( 21.642, 600 )
+resetTo = "3"
 
 [node name="Death Zone2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -469.892, 1869.76 )
 scale = Vector2( 10, 600 )
+resetTo = "3"
 
 [node name="Coins" type="Node" parent="."]
 

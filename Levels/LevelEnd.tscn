@@ -21,22 +21,22 @@ expand = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="HUD"]
+[node name="control" type="Control" parent="HUD"]
 margin_left = 379.246
 margin_top = 353.486
 margin_right = 718.246
 margin_bottom = 481.486
 
-[node name="start" type="Button" parent="HUD/Control"]
+[node name="restart" type="Button" parent="HUD/control"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -46.0
 margin_right = 46.0
 margin_bottom = 52.0
-text = "Start"
+text = "Restart"
 script = ExtResource( 2 )
 
-[node name="exit" type="Button" parent="HUD/Control"]
+[node name="exit" type="Button" parent="HUD/control"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -46,10 +46,10 @@ margin_top = -53.0
 margin_right = 45.5
 text = "Exit"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HUD"]
+[node name="message" type="RichTextLabel" parent="HUD"]
 margin_left = 215.404
 margin_top = 123.0
 margin_right = 889.404
 margin_bottom = 286.0
-text = "Astronauta"
-[connection signal="button_up" from="HUD/Control/start" to="HUD/Control/start" method="_on_start_button_up"]
+text = "Victory!"
+[connection signal="button_up" from="HUD/control/restart" to="HUD/control/restart" method="_on_start_button_up"]

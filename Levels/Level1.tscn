@@ -146,6 +146,7 @@ to = "2"
 [node name="Dead Zone" parent="." instance=ExtResource( 4 )]
 position = Vector2( 441.232, 340.05 )
 scale = Vector2( 1000, 10 )
+resetTo = "1"
 
 [node name="Coins" type="Node" parent="."]
 editor/display_folded = true
