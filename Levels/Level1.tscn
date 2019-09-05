@@ -129,9 +129,17 @@ scale = Vector2( 3.5, 5.5 )
 position = Vector2( 441.232, 340.05 )
 scale = Vector2( 1000, 10 )
 
-[node name="Collectable" parent="." instance=ExtResource( 4 )]
-position = Vector2( 335.389, -43.8293 )
-scale = Vector2( 1, 1 )
+[node name="Coins" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Coin" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 566.676, -60 )
+
+[node name="Area2D2" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 425.624, -60 )
+
+[node name="Area2D" parent="Coins" instance=ExtResource( 4 )]
+position = Vector2( 285.366, -60 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
